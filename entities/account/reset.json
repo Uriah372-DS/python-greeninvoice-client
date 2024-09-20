@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "userId": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        },
+        "ip": {
+            "type": "string"
+        },
+        "creationDate": {
+            "type": "number"
+        },
+        "lastUpdateDate": {
+            "type": "number"
+        }
+    }
+}

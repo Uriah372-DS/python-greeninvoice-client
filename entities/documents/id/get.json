@@ -1,0 +1,562 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "type": {
+            "anyOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "enum": [
+                        10,
+                        100,
+                        200,
+                        210,
+                        300,
+                        305,
+                        320,
+                        330,
+                        400,
+                        405,
+                        500,
+                        600,
+                        610
+                    ]
+                }
+            ]
+        },
+        "number": {
+            "type": "string"
+        },
+        "documentDate": {
+            "type": "string"
+        },
+        "creationDate": {
+            "type": "number"
+        },
+        "status": {
+            "type": "number"
+        },
+        "lang": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "he",
+                        "en"
+                    ]
+                }
+            ]
+        },
+        "amountDueVat": {
+            "type": "number"
+        },
+        "amountExemptVat": {
+            "type": "number"
+        },
+        "amountExcludedVat": {
+            "type": "number"
+        },
+        "amountLocal": {
+            "type": "number"
+        },
+        "amountOpened": {
+            "type": "number"
+        },
+        "vat": {
+            "type": "number"
+        },
+        "amount": {
+            "type": "number"
+        },
+        "currency": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "ILS",
+                        "USD",
+                        "EUR",
+                        "GBP",
+                        "JPY",
+                        "CHF",
+                        "CNY",
+                        "AUD",
+                        "CAD",
+                        "RUB",
+                        "BRL",
+                        "HKD",
+                        "SGD",
+                        "THB",
+                        "MXN",
+                        "TRY",
+                        "NZD",
+                        "SEK",
+                        "NOK",
+                        "DKK",
+                        "KRW",
+                        "INR",
+                        "IDR",
+                        "PLN",
+                        "RON",
+                        "ZAR",
+                        "HRK"
+                    ]
+                }
+            ]
+        },
+        "currencyRate": {
+            "type": "number"
+        },
+        "vatType": {
+            "type": "number"
+        },
+        "income": {
+            "type": "array"
+        },
+        "payment": {
+            "type": "array"
+        },
+        "client": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "taxId": {
+                    "type": "string"
+                },
+                "department": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                },
+                "country": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "enum": [
+                                "UG",
+                                "UZ",
+                                "AT",
+                                "AU",
+                                "UA",
+                                "UY",
+                                "AZ",
+                                "CX",
+                                "AE",
+                                "IT",
+                                "BS",
+                                "GS",
+                                "UM",
+                                "VI",
+                                "VG",
+                                "HM",
+                                "TC",
+                                "MP",
+                                "MH",
+                                "SB",
+                                "FO",
+                                "FK",
+                                "FJ",
+                                "KM",
+                                "CK",
+                                "CC",
+                                "KY",
+                                "ID",
+                                "IS",
+                                "IE",
+                                "IR",
+                                "SV",
+                                "AL",
+                                "DZ",
+                                "AX",
+                                "AO",
+                                "AI",
+                                "AD",
+                                "AQ",
+                                "AG",
+                                "EE",
+                                "AF",
+                                "EC",
+                                "AR",
+                                "US",
+                                "AW",
+                                "ER",
+                                "AM",
+                                "ET",
+                                "BT",
+                                "BV",
+                                "BW",
+                                "BG",
+                                "BO",
+                                "BA",
+                                "BI",
+                                "BF",
+                                "BH",
+                                "BY",
+                                "BE",
+                                "BZ",
+                                "BD",
+                                "BJ",
+                                "BB",
+                                "BN",
+                                "BR",
+                                "GB",
+                                "BM",
+                                "DJ",
+                                "JM",
+                                "JE",
+                                "GA",
+                                "GE",
+                                "GH",
+                                "GT",
+                                "GU",
+                                "GP",
+                                "GY",
+                                "GI",
+                                "GN",
+                                "GW",
+                                "GQ",
+                                "GF",
+                                "GM",
+                                "GL",
+                                "DE",
+                                "GD",
+                                "GG",
+                                "DM",
+                                "DK",
+                                "ZA",
+                                "SS",
+                                "KR",
+                                "IM",
+                                "NF",
+                                "HT",
+                                "MV",
+                                "BQ",
+                                "IN",
+                                "NL",
+                                "HK",
+                                "HU",
+                                "HN",
+                                "IO",
+                                "TF",
+                                "PH",
+                                "DO",
+                                "CD",
+                                "CF",
+                                "PS",
+                                "WF",
+                                "VN",
+                                "VU",
+                                "VE",
+                                "VA",
+                                "ZW",
+                                "ZM",
+                                "CI",
+                                "TJ",
+                                "TV",
+                                "TG",
+                                "TO",
+                                "TN",
+                                "TK",
+                                "TR",
+                                "TM",
+                                "TW",
+                                "TZ",
+                                "TT",
+                                "GR",
+                                "JP",
+                                "JO",
+                                "IL",
+                                "KW",
+                                "CV",
+                                "LA",
+                                "LB",
+                                "LY",
+                                "LU",
+                                "LV",
+                                "LR",
+                                "LT",
+                                "LI",
+                                "LS",
+                                "MR",
+                                "MU",
+                                "ML",
+                                "MG",
+                                "MZ",
+                                "MD",
+                                "MN",
+                                "ME",
+                                "MS",
+                                "MC",
+                                "TL",
+                                "MM",
+                                "YT",
+                                "FM",
+                                "MW",
+                                "MY",
+                                "MT",
+                                "EG",
+                                "MO",
+                                "MK",
+                                "MX",
+                                "MA",
+                                "MQ",
+                                "NR",
+                                "NO",
+                                "NG",
+                                "NZ",
+                                "NU",
+                                "NE",
+                                "NI",
+                                "NA",
+                                "NP",
+                                "ST",
+                                "SJ",
+                                "EH",
+                                "SD",
+                                "SZ",
+                                "SO",
+                                "SY",
+                                "SR",
+                                "SL",
+                                "SC",
+                                "CN",
+                                "SG",
+                                "SI",
+                                "SK",
+                                "WS",
+                                "AS",
+                                "BL",
+                                "MF",
+                                "SM",
+                                "PM",
+                                "SN",
+                                "SH",
+                                "VC",
+                                "LC",
+                                "SX",
+                                "KN",
+                                "SA",
+                                "ES",
+                                "RS",
+                                "LK",
+                                "OM",
+                                "IQ",
+                                "PW",
+                                "PL",
+                                "PF",
+                                "PR",
+                                "PT",
+                                "PN",
+                                "FI",
+                                "PA",
+                                "PG",
+                                "PK",
+                                "PY",
+                                "PE",
+                                "TD",
+                                "CL",
+                                "CZ",
+                                "KP",
+                                "FR",
+                                "CU",
+                                "CO",
+                                "CG",
+                                "XK",
+                                "CR",
+                                "CW",
+                                "KZ",
+                                "QA",
+                                "KG",
+                                "KI",
+                                "NC",
+                                "KH",
+                                "CM",
+                                "CA",
+                                "KE",
+                                "CY",
+                                "HR",
+                                "RE",
+                                "RW",
+                                "RO",
+                                "RU",
+                                "SE",
+                                "CH",
+                                "TH",
+                                "YE"
+                            ]
+                        }
+                    ]
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "fax": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "emails": {
+                    "type": "array"
+                },
+                "self": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "business": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "enum": [
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6
+                            ]
+                        }
+                    ]
+                },
+                "taxId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "fax": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "bankName": {
+                    "type": "string"
+                },
+                "bankBranch": {
+                    "type": "string"
+                },
+                "bankAccount": {
+                    "type": "string"
+                },
+                "bankSwift": {
+                    "type": "string"
+                },
+                "bankAba": {
+                    "type": "string"
+                },
+                "bankIban": {
+                    "type": "string"
+                },
+                "bankBeneficiary": {
+                    "type": "string"
+                },
+                "exemption": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "url": {
+            "type": "object",
+            "properties": {
+                "he": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "en": {
+                    "type": "string"
+                }
+            }
+        },
+        "footer": {
+            "type": "string"
+        },
+        "remarks": {
+            "type": "string"
+        },
+        "rounding": {
+            "type": "boolean"
+        },
+        "ref": {
+            "type": "array"
+        },
+        "signed": {
+            "type": "boolean"
+        },
+        "cancellable": {
+            "type": "boolean"
+        },
+        "discount": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "type": {
+                    "enum": [
+                        "sum",
+                        "percentage"
+                    ]
+                },
+                "total": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

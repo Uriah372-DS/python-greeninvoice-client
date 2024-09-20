@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "type": {
+            "anyOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "enum": [
+                        10,
+                        100,
+                        200,
+                        210,
+                        300,
+                        305,
+                        320,
+                        330,
+                        400,
+                        405,
+                        500,
+                        600,
+                        610
+                    ]
+                }
+            ]
+        },
+        "number": {
+            "type": "number"
+        },
+        "documentDate": {
+            "type": "string"
+        },
+        "amount": {
+            "type": "number"
+        },
+        "currency": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "ILS",
+                        "USD",
+                        "EUR",
+                        "GBP",
+                        "JPY",
+                        "CHF",
+                        "CNY",
+                        "AUD",
+                        "CAD",
+                        "RUB",
+                        "BRL",
+                        "HKD",
+                        "SGD",
+                        "THB",
+                        "MXN",
+                        "TRY",
+                        "NZD",
+                        "SEK",
+                        "NOK",
+                        "DKK",
+                        "KRW",
+                        "INR",
+                        "IDR",
+                        "PLN",
+                        "RON",
+                        "ZAR",
+                        "HRK"
+                    ]
+                }
+            ]
+        },
+        "currencyRate": {
+            "type": "number"
+        },
+        "status": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "currency"
+    ]
+}

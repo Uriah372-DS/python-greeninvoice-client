@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "businessId": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number"
+        },
+        "currency": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "ILS",
+                        "USD",
+                        "EUR",
+                        "GBP",
+                        "JPY",
+                        "CHF",
+                        "CNY",
+                        "AUD",
+                        "CAD",
+                        "RUB",
+                        "BRL",
+                        "HKD",
+                        "SGD",
+                        "THB",
+                        "MXN",
+                        "TRY",
+                        "NZD",
+                        "SEK",
+                        "NOK",
+                        "DKK",
+                        "KRW",
+                        "INR",
+                        "IDR",
+                        "PLN",
+                        "RON",
+                        "ZAR",
+                        "HRK"
+                    ]
+                }
+            ]
+        },
+        "creationDate": {
+            "type": "number"
+        },
+        "lastUpdateDate": {
+            "type": "number"
+        }
+    }
+}

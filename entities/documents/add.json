@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "number": {
+            "type": "number"
+        },
+        "signed": {
+            "type": "boolean"
+        },
+        "lang": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "he",
+                        "en"
+                    ]
+                }
+            ]
+        },
+        "url": {
+            "type": "object",
+            "properties": {
+                "origin": {
+                    "type": "string"
+                },
+                "he": {
+                    "type": "string"
+                },
+                "en": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

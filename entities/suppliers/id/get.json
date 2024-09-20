@@ -1,0 +1,360 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "active": {
+            "type": "boolean"
+        },
+        "taxId": {
+            "type": "string"
+        },
+        "paymentTerms": {
+            "anyOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "enum": [
+                        -1,
+                        0,
+                        10,
+                        15,
+                        30,
+                        45,
+                        60,
+                        75,
+                        90,
+                        120
+                    ]
+                }
+            ]
+        },
+        "bankName": {
+            "type": "string"
+        },
+        "bankBranch": {
+            "type": "string"
+        },
+        "bankAccount": {
+            "type": "string"
+        },
+        "country": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "enum": [
+                        "UG",
+                        "UZ",
+                        "AT",
+                        "AU",
+                        "UA",
+                        "UY",
+                        "AZ",
+                        "CX",
+                        "AE",
+                        "IT",
+                        "BS",
+                        "GS",
+                        "UM",
+                        "VI",
+                        "VG",
+                        "HM",
+                        "TC",
+                        "MP",
+                        "MH",
+                        "SB",
+                        "FO",
+                        "FK",
+                        "FJ",
+                        "KM",
+                        "CK",
+                        "CC",
+                        "KY",
+                        "ID",
+                        "IS",
+                        "IE",
+                        "IR",
+                        "SV",
+                        "AL",
+                        "DZ",
+                        "AX",
+                        "AO",
+                        "AI",
+                        "AD",
+                        "AQ",
+                        "AG",
+                        "EE",
+                        "AF",
+                        "EC",
+                        "AR",
+                        "US",
+                        "AW",
+                        "ER",
+                        "AM",
+                        "ET",
+                        "BT",
+                        "BV",
+                        "BW",
+                        "BG",
+                        "BO",
+                        "BA",
+                        "BI",
+                        "BF",
+                        "BH",
+                        "BY",
+                        "BE",
+                        "BZ",
+                        "BD",
+                        "BJ",
+                        "BB",
+                        "BN",
+                        "BR",
+                        "GB",
+                        "BM",
+                        "DJ",
+                        "JM",
+                        "JE",
+                        "GA",
+                        "GE",
+                        "GH",
+                        "GT",
+                        "GU",
+                        "GP",
+                        "GY",
+                        "GI",
+                        "GN",
+                        "GW",
+                        "GQ",
+                        "GF",
+                        "GM",
+                        "GL",
+                        "DE",
+                        "GD",
+                        "GG",
+                        "DM",
+                        "DK",
+                        "ZA",
+                        "SS",
+                        "KR",
+                        "IM",
+                        "NF",
+                        "HT",
+                        "MV",
+                        "BQ",
+                        "IN",
+                        "NL",
+                        "HK",
+                        "HU",
+                        "HN",
+                        "IO",
+                        "TF",
+                        "PH",
+                        "DO",
+                        "CD",
+                        "CF",
+                        "PS",
+                        "WF",
+                        "VN",
+                        "VU",
+                        "VE",
+                        "VA",
+                        "ZW",
+                        "ZM",
+                        "CI",
+                        "TJ",
+                        "TV",
+                        "TG",
+                        "TO",
+                        "TN",
+                        "TK",
+                        "TR",
+                        "TM",
+                        "TW",
+                        "TZ",
+                        "TT",
+                        "GR",
+                        "JP",
+                        "JO",
+                        "IL",
+                        "KW",
+                        "CV",
+                        "LA",
+                        "LB",
+                        "LY",
+                        "LU",
+                        "LV",
+                        "LR",
+                        "LT",
+                        "LI",
+                        "LS",
+                        "MR",
+                        "MU",
+                        "ML",
+                        "MG",
+                        "MZ",
+                        "MD",
+                        "MN",
+                        "ME",
+                        "MS",
+                        "MC",
+                        "TL",
+                        "MM",
+                        "YT",
+                        "FM",
+                        "MW",
+                        "MY",
+                        "MT",
+                        "EG",
+                        "MO",
+                        "MK",
+                        "MX",
+                        "MA",
+                        "MQ",
+                        "NR",
+                        "NO",
+                        "NG",
+                        "NZ",
+                        "NU",
+                        "NE",
+                        "NI",
+                        "NA",
+                        "NP",
+                        "ST",
+                        "SJ",
+                        "EH",
+                        "SD",
+                        "SZ",
+                        "SO",
+                        "SY",
+                        "SR",
+                        "SL",
+                        "SC",
+                        "CN",
+                        "SG",
+                        "SI",
+                        "SK",
+                        "WS",
+                        "AS",
+                        "BL",
+                        "MF",
+                        "SM",
+                        "PM",
+                        "SN",
+                        "SH",
+                        "VC",
+                        "LC",
+                        "SX",
+                        "KN",
+                        "SA",
+                        "ES",
+                        "RS",
+                        "LK",
+                        "OM",
+                        "IQ",
+                        "PW",
+                        "PL",
+                        "PF",
+                        "PR",
+                        "PT",
+                        "PN",
+                        "FI",
+                        "PA",
+                        "PG",
+                        "PK",
+                        "PY",
+                        "PE",
+                        "TD",
+                        "CL",
+                        "CZ",
+                        "KP",
+                        "FR",
+                        "CU",
+                        "CO",
+                        "CG",
+                        "XK",
+                        "CR",
+                        "CW",
+                        "KZ",
+                        "QA",
+                        "KG",
+                        "KI",
+                        "NC",
+                        "KH",
+                        "CM",
+                        "CA",
+                        "KE",
+                        "CY",
+                        "HR",
+                        "RE",
+                        "RW",
+                        "RO",
+                        "RU",
+                        "SE",
+                        "CH",
+                        "TH",
+                        "YE"
+                    ]
+                }
+            ]
+        },
+        "phone": {
+            "type": "string"
+        },
+        "mobile": {
+            "type": "string"
+        },
+        "contactPerson": {
+            "type": "string"
+        },
+        "emails": {
+            "type": "array"
+        },
+        "labels": {
+            "type": "array"
+        },
+        "creationDate": {
+            "type": "number"
+        },
+        "lastUpdateDate": {
+            "type": "number"
+        },
+        "department": {
+            "type": "string"
+        },
+        "accountingKey": {
+            "type": "string"
+        },
+        "address": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "zip": {
+            "type": "string"
+        },
+        "fax": {
+            "type": "string"
+        },
+        "remarks": {
+            "type": "string"
+        },
+        "incomeAmount": {
+            "type": "number"
+        },
+        "paymentAmount": {
+            "type": "number"
+        },
+        "balanceAmount": {
+            "type": "number"
+        }
+    }
+}
