@@ -7,8 +7,8 @@ from functools import partial
 from giclient.event_hooks import *
 
 
-class JWTAuthenticaion(httpx.Auth):
-    """ JWTAuthenticaion is a class that implements the httpx.Auth interface for JWT authentication. """
+class JWTAuthentication(httpx.Auth):
+    """ JWTAuthentication is a class that implements the httpx.Auth interface for JWT authentication. """
     requires_response_body: bool = True
 
     _logger_name: str = "greeninvoice.async_greeninvoice_api_authenticator"
@@ -29,13 +29,14 @@ class JWTAuthenticaion(httpx.Auth):
         token_endpoint: str = "/account/token",
         client: httpx.AsyncClient | httpx.Client | None = None):
         """
-        A constructor method for JWTAuthenticaion class. It initializes the class with the given parameters.
+        A constructor method for JWTAuthentication class. It initializes the class with the given parameters.
 
         The token is fetched from the token_url using the api_key and api_secret only when the first request is made or when the token has expired.
 
         Args:
             api_key (str): The API key.
             api_secret (str): The API secret.
+            base_url (httpx.URL | str): The base URL of the API.
             token_endpoint (str): The URL endpoint to fetch the JWT token from.
             client (httpx.AsyncClient): The HTTP client to use for fetching the token.
         """
@@ -92,8 +93,9 @@ class JWTAuthenticaion(httpx.Auth):
             method="POST",
             url=self.token_endpoint,
             json={
-            'id': self.api_key,
-            'secret': self.api_secret,
+                'id': self.api_key,
+                'secret': self.api_secret,
+                'grant_type': 'client_credentials'
             })
         try:
             token_data = response.json()
@@ -124,7 +126,8 @@ class JWTAuthenticaion(httpx.Auth):
             url=self.token_endpoint,
             json={
                 'id': self.api_key,
-                'secret': self.api_secret
+                'secret': self.api_secret,
+                'grant_type': 'client_credentials'
             }
         )
         if isinstance(response, Coroutine):

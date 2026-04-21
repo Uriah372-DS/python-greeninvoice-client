@@ -34,7 +34,7 @@ class AsyncClientAPI:
         self,
         api_key: str,
         api_secret: str,
-        base_url: URL | Literal["api", "tools"] = "api",
+        base_url: URL | str | Literal["api", "tools"] = "api",
         max_rate: int=3,
         time_period: int=1,
         retries: int=0
@@ -58,11 +58,19 @@ class AsyncClientAPI:
             The number of retries allowed for a request.
         """
 
+        # Resolve the base URL safely
+        if base_url == "api":
+            resolved_base_url = URL(API_BASE_URL)
+        elif base_url == "tools":
+            resolved_base_url = URL(TOOLS_BASE_URL)
+        else:
+            resolved_base_url = URL(base_url)
+
         # Set the client:
         self.manager = AsyncClientManager(
             api_key=str(api_key),
             api_secret=str(api_secret),
-            base_url=URL(API_BASE_URL) if base_url == "api" else URL(TOOLS_BASE_URL),
+            base_url=resolved_base_url,
             max_rate=max_rate,
             time_period=time_period,
             retries=retries)

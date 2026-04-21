@@ -4,7 +4,7 @@ from yarl import URL
 from functools import partial
 
 from giclient.event_hooks import *
-from giclient.authentication import JWTAuthenticaion
+from giclient.authentication import JWTAuthentication
 from giclient.transport import RateLimitedAsyncTransport
 
 
@@ -77,7 +77,7 @@ class AsyncClientManager:
         """
         self._logger.debug(msg="Refreshing the client.")
 
-        self.auth = JWTAuthenticaion(
+        self.auth = JWTAuthentication(
             api_key=self.api_key,
             api_secret=self.api_secret,
             base_url=str(self.base_url),
