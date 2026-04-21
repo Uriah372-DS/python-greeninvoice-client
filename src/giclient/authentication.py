@@ -8,7 +8,7 @@ from giclient.event_hooks import *
 
 
 class JWTAuthentication(httpx.Auth):
-    """ JWTAuthentication is a class that implements the httpx.Auth interface for JWT authentication. """
+    """ JWTAuthentication is a class that implements the httpx.Auth interface for JWT authentication."""
     requires_response_body: bool = True
 
     _logger_name: str = "greeninvoice.async_greeninvoice_api_authenticator"
