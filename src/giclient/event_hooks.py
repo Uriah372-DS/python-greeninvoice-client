@@ -5,19 +5,24 @@ import httpx
 # Event-Hooks:
 # https://www.python-httpx.org/advanced/event-hooks/
 ## REQUEST:
-async def log_request(request: httpx.Request, logger_name: str):
+async def log_request(request: httpx.Request, logger_name: str) -> None:
     logger = logging.getLogger(name=logger_name)
     logger.debug(msg=f"Request event hook: {request.method} {request.url} - Waiting for response")
 
 
 ## RESPONSE:
-async def log_response(response: httpx.Response, logger_name: str):
+async def log_response(response: httpx.Response, logger_name: str) -> None:
     logger = logging.getLogger(name=logger_name)
     request: httpx.Request = response.request
     logger.debug(msg=f"Response event hook: {request.method} {str(request.url)} - Status {response.status_code}")
 
 
-async def response_raise_for_status(response: httpx.Response, logger_name: str):
+async def response_raise_for_status(response: httpx.Response, logger_name: str) -> None:
+    # If the request failed, read the response stream into memory BEFORE raising the exception
+    # so that the error details (like JSON payloads) are available in the HTTPStatusError.
+    if not response.is_success:
+        await response.aread()
+
     try:
         response.raise_for_status()
     except httpx.HTTPStatusError as e:
