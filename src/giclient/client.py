@@ -1,4 +1,5 @@
 import logging
+from re import S
 from yarl import URL
 
 from typing import Literal, TypeVar
@@ -20,6 +21,8 @@ API_BASE_URL = "https://api.greeninvoice.co.il/api/v1"
 
 TOOLS_BASE_URL = "https://cache.greeninvoice.co.il"
 
+SANDBOX_BASE_URL = "https://sandbox.greeninvoice.co.il/api/v1"
+
 
 T = TypeVar("T", bound="AsyncClientAPI")
 
@@ -34,7 +37,7 @@ class AsyncClientAPI:
         self,
         api_key: str,
         api_secret: str,
-        base_url: URL | str | Literal["api", "tools"] = "api",
+        base_url: URL | str | Literal["api", "tools", "sandbox"] = "api",
         max_rate: int=3,
         time_period: int=1,
         retries: int=0
@@ -63,6 +66,8 @@ class AsyncClientAPI:
             resolved_base_url = URL(API_BASE_URL)
         elif base_url == "tools":
             resolved_base_url = URL(TOOLS_BASE_URL)
+        elif base_url == "sandbox":
+            resolved_base_url = URL(SANDBOX_BASE_URL)
         else:
             resolved_base_url = URL(base_url)
 
