@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "python-greeninvoice-client"
 readme = "README.md"
 license = {file = "LICENSE"}
-version = "0.1.5"
+version = "0.1.7"
 requires-python = ">= 3.12"
 authors = [ { name = "UniProBI" } ]
 maintainers = [ { email = "uriah372@gmail.com" } ]
